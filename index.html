@@ -1,7 +1,18 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>Escritório Batista</title>
+<meta name="description" content="Contato do Escritório Batista: WhatsApp, e-mail e site. Advocacia criminal e execução penal.">
+<meta property="og:title" content="Escritório Batista">
+<meta property="og:description" content="Advocacia Criminal e Execução Penal. Fale pelo WhatsApp, e-mail ou visite o site.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap">
 <style>
   :root {
     --paper: #ece3d3;
@@ -17,10 +28,10 @@
   }
 
   * { box-sizing: border-box; }
+  html, body { margin: 0; }
 
   body {
-    margin: 0;
-    min-height: 100%;
+    min-height: 100vh;
     background: var(--paper);
     background-image:
       radial-gradient(ellipse at 15% 8%, rgba(109,21,36,0.05), transparent 45%),
@@ -31,36 +42,25 @@
     align-items: center;
     justify-content: center;
     padding-inline: 20px;
-    padding-block: max(48px, env(safe-area-inset-top, 0px)) max(48px, env(safe-area-inset-bottom, 0px));
+    padding-block: max(40px, env(safe-area-inset-top, 0px)) max(40px, env(safe-area-inset-bottom, 0px));
   }
 
   a { color: inherit; }
-  a:focus-visible, button:focus-visible {
-    outline: 2px solid var(--focus);
-    outline-offset: 3px;
-  }
-
-  .stage {
-    width: 100%;
-    max-width: 620px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
+  a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 
   .card {
     position: relative;
     width: 100%;
+    max-width: 420px;
     background: var(--card);
     border: 1px solid var(--bordeaux-line);
     border-radius: 6px;
-    padding: clamp(32px, 6vw, 60px) clamp(24px, 7vw, 56px);
+    padding: clamp(32px, 7vw, 48px) clamp(24px, 6vw, 40px);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 22px;
+    gap: 8px;
     box-shadow: 0 1px 2px rgba(37, 31, 25, 0.06), 0 18px 40px -24px rgba(37, 31, 25, 0.35);
   }
 
@@ -73,182 +73,136 @@
     pointer-events: none;
   }
 
-  .stamp {
-    font-family: "Work Sans", sans-serif;
-    font-weight: 700;
-    font-size: 0.68rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--bordeaux-deep);
-    border: 1.5px solid var(--bordeaux-deep);
-    border-radius: 999px;
-    padding: 7px 18px;
-    transform: rotate(-3deg);
-    position: relative;
-  }
-  .stamp::before, .stamp::after {
-    content: "";
-    position: absolute;
-    inset: 3px;
-    border: 1px solid rgba(67, 11, 21, 0.55);
-    border-radius: 999px;
-  }
-  .stamp::after { inset: 3px; }
-
-  .eyebrow {
-    margin: 0;
-    font-size: 0.78rem;
+  .seal {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: radial-gradient(120% 120% at 32% 22%, #9a2438 0%, var(--bordeaux-deep) 65%, #26060b 100%);
+    border: 1px solid var(--bordeaux-line);
+    display: grid;
+    place-items: center;
+    font-family: "Fraunces", Georgia, serif;
+    font-style: italic;
     font-weight: 600;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    color: var(--bordeaux);
+    font-size: 28px;
+    color: #f2ddd2;
+    margin-bottom: 6px;
+    flex: none;
   }
 
   h1 {
     margin: 0;
     font-family: "Fraunces", Georgia, serif;
     font-weight: 600;
-    font-optical-sizing: auto;
-    font-size: clamp(2.2rem, 5.6vw + 0.6rem, 3.6rem);
-    line-height: 1.06;
+    font-size: clamp(1.6rem, 5vw, 2rem);
+    line-height: 1.12;
     color: var(--bordeaux-deep);
     text-wrap: balance;
   }
 
   .tagline {
-    margin: -10px 0 0;
-    font-size: 1.05rem;
+    margin: 0 0 4px;
+    font-size: 0.98rem;
     font-weight: 500;
     color: var(--ink-soft);
-    letter-spacing: 0.01em;
   }
 
-  .rule {
-    width: 64px;
-    height: 3px;
-    background: var(--bordeaux);
-    border-radius: 2px;
-    opacity: 0.75;
+  .prompt {
+    margin: 4px 0 2px;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--bordeaux);
+    font-weight: 600;
   }
 
-  .lede {
-    margin: 0;
-    max-width: 42ch;
-    font-size: 1.02rem;
-    line-height: 1.65;
-    color: var(--ink);
-  }
-
-  .features {
-    list-style: none;
-    margin: 0;
-    padding: 18px 0 4px;
-    width: 100%;
-    max-width: 44ch;
+  .links {
     display: flex;
     flex-direction: column;
-    gap: 14px;
-    border-top: 1px solid var(--bordeaux-line);
-    border-bottom: 1px solid var(--bordeaux-line);
-  }
-  .features li {
-    display: flex;
     gap: 12px;
-    text-align: left;
-    font-size: 0.98rem;
-    line-height: 1.5;
-    color: var(--ink);
-  }
-  .features .mark {
-    font-family: "Fraunces", serif;
-    font-weight: 600;
-    color: var(--bordeaux);
-    flex: none;
-    font-size: 1.15rem;
-    line-height: 1.4;
+    width: 100%;
+    margin-top: 10px;
   }
 
-  .cta {
-    display: inline-flex;
+  .lnk {
+    display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     text-decoration: none;
-    background: var(--whatsapp);
-    color: #ffffff;
-    font-weight: 600;
+    border-radius: 12px;
+    padding: 15px 18px;
     font-size: 1rem;
-    padding: 14px 30px;
-    border-radius: 999px;
+    font-weight: 600;
+    background: #fffdf9;
+    color: var(--ink);
+    border: 1px solid var(--bordeaux-line);
+    transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  }
+  .lnk:hover { border-color: var(--bordeaux); background: #fffaf0; transform: translateY(-1px); }
+  .lnk svg { width: 19px; height: 19px; flex: none; }
+
+  .lnk.primary {
+    background: var(--whatsapp);
+    border-color: var(--whatsapp);
+    color: #ffffff;
     box-shadow: 0 10px 24px -12px rgba(26, 156, 77, 0.55);
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
   }
-  .cta:hover {
-    background: var(--whatsapp-deep);
-    transform: translateY(-1px);
-    box-shadow: 0 14px 28px -12px rgba(26, 156, 77, 0.6);
-  }
-  .cta svg { width: 20px; height: 20px; flex: none; }
+  .lnk.primary:hover { background: var(--whatsapp-deep); border-color: var(--whatsapp-deep); }
 
-  .email {
-    margin-top: -10px;
-    font-size: 0.9rem;
-    color: var(--ink-soft);
-    text-decoration: underline;
-    text-decoration-color: var(--bordeaux-line);
-    text-underline-offset: 3px;
-  }
-
-  .cite {
-    margin: 4px 0 0;
-    font-size: 0.82rem;
-    font-style: italic;
-    color: var(--ink-soft);
-    max-width: 40ch;
-    line-height: 1.55;
-  }
+  .arrow { color: var(--bordeaux); font-size: 0.9em; margin-left: 2px; }
+  .lnk.primary .arrow { color: rgba(255,255,255,0.85); }
 
   footer {
-    font-size: 0.78rem;
+    margin-top: 22px;
+    font-size: 0.76rem;
     color: var(--ink-soft);
     text-align: center;
-    letter-spacing: 0.02em;
+    max-width: 34ch;
+    line-height: 1.5;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .cta { transition: none; }
-  }
-
-  @media (max-width: 420px) {
-    h1 { font-size: 2rem; }
-    .card { gap: 18px; }
+    .lnk { transition: none; }
   }
 </style>
+</head>
+<body>
 
-<div class="stage">
-  <main class="card">
-    <div class="stamp">Em elaboração</div>
-    <p class="eyebrow">Advocacia Criminal · Execução Penal</p>
-    <h1>Escritório Batista</h1>
-    <p class="tagline">Direito Penal e Execução Penal</p>
-    <div class="rule" aria-hidden="true"></div>
-    <p class="lede">O novo site do escritório está em preparação. Em breve, mais informações sobre a atuação reunidas em um só lugar. Até lá, fale diretamente com a equipe.</p>
+<main class="card">
+  <div class="seal" aria-hidden="true">EB</div>
+  <h1>Escritório Batista</h1>
+  <p class="tagline">Direito Penal e Execução Penal</p>
+  <p class="prompt">Como prefere falar com a gente?</p>
 
-    <ul class="features">
-      <li><span class="mark" aria-hidden="true">§</span><span>Atendimento inicial pelo WhatsApp, com retorno da equipe</span></li>
-      <li><span class="mark" aria-hidden="true">§</span><span>Informações sobre a atuação em Direito Penal e Execução Penal</span></li>
-      <li><span class="mark" aria-hidden="true">§</span><span>Área do cliente para acompanhamento processual — em preparação</span></li>
-    </ul>
-
-    <a class="cta" href="https://wa.me/5521965234219?text=Ol%C3%A1%2C%20vim%20pelo%20site%20do%20Escrit%C3%B3rio%20Batista%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">
+  <nav class="links" aria-label="Contato">
+    <a class="lnk primary" href="https://wa.me/5521965234219?text=Ol%C3%A1%2C%20vim%20pelo%20link%20do%20Instagram%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M12 2.5c-5.25 0-9.5 4.25-9.5 9.5 0 1.68.44 3.26 1.21 4.63L2.5 21.5l5.02-1.18A9.46 9.46 0 0 0 12 21.5c5.25 0 9.5-4.25 9.5-9.5S17.25 2.5 12 2.5z" stroke="#ffffff" stroke-width="1.4"/>
         <path d="M8.4 8.3c.2-.45.4-.46.6-.47.16 0 .35 0 .5.01.16.01.4-.06.62.47.24.58.8 2 .87 2.14.07.15.12.32.02.51-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.75 1.24 1.62 2 1.12.99 2.06 1.3 2.36 1.44.3.15.47.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.24.66-.15.27.1 1.7.8 2 .95.3.15.5.22.57.35.07.13.07.75-.18 1.47-.24.72-1.4 1.4-1.95 1.48-.5.08-1.1.11-1.78-.11a15.6 15.6 0 0 1-1.7-.63 12.5 12.5 0 0 1-4.6-4.07c-.68-.9-1.13-2-1.26-2.35-.13-.34-.71-1.7-.71-2.42 0-.72.38-1.08.5-1.23z" fill="#ffffff"/>
       </svg>
-      Falar no WhatsApp
+      Falar no WhatsApp <span class="arrow">→</span>
     </a>
-    <a class="email" href="mailto:jessbatistdir@gmail.com">jessbatistdir@gmail.com</a>
 
-    <p class="cite">Atuação orientada pela Lei de Execução Penal (Lei nº 7.210/1984) e pelo Código de Processo Penal.</p>
-  </main>
-  <footer>© 2026 Escritório Batista — Advocacia Criminal e Execução Penal</footer>
-</div>
+    <a class="lnk" href="site/">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M3 12h18M12 3c2.4 2.4 3.6 5.4 3.6 9s-1.2 6.6-3.6 9c-2.4-2.4-3.6-5.4-3.6-9S9.6 5.4 12 3z" stroke="currentColor" stroke-width="1.4"/>
+      </svg>
+      Entrar no site <span class="arrow">→</span>
+    </a>
+
+    <a class="lnk" href="mailto:jessbatistdir@gmail.com">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.4"/>
+      </svg>
+      Enviar e-mail <span class="arrow">→</span>
+    </a>
+  </nav>
+
+  <footer>Conteúdo meramente informativo, nos termos do Provimento 205/2021 da OAB.</footer>
+</main>
+
+</body>
+</html>
